@@ -50,10 +50,44 @@
                 <div class="botoes">
                     <button class="btn-secundario">Usar minha localização atual</button>
                     <button class="btn-primario" onclick="irParaEtapa(2)">Continuar</button>
+                </div> 
+            </div>  
+            <div id="etapa-2" class="cartao-formulario" style="display:none">
+                <h2>Conte Sobre sua criança.</h2>
+                <p class="subtitulo">Você poderá adicionar mais crianças depois de concluir.</p>
+
+                <label class="campo-label">Seu filho é...</label>
+                <div class="genero-row">
+                    <button class="genero-btn sel" onclick="selecionarGenero(this)">Menino</button>
+                    <button class="genero-btn" onclick="selecionarGenero(this)">Menina</button>
+                </div>
+                <div class="linha-dupla">
+                    <div class="campo">
+                        <label for="nome">Nome da criança</label>
+                        <input type="text" id="nome" placeholder="Ex:Pedro">
+                    </div>
+                    <div class="campo">
+                        <label for="nascimento">Data de nascimento</label>
+                        <input type="text" id="nascimento" placeholder="dd/mm/aaaa">
+                    </div>
+                </div>
+                <div class="campo">
+                    <label for="descricao">Descreva seu filho</label>
+                    <textarea id="descricao" placeholder="Fale sobre a personalidade, rotina e necessidades dele..."></textarea>
+                </div>
+                <hr class="divisor">
+
+                <div class="add-filho">
+                    <div class="add-icone">+</div>
+                    Adicionar outra criança
                 </div>
 
-            </div>    
-        </div>  
+                <div class="botoes">
+                    <button class="btn-voltar" onclick="irParaEtapa(1)">← Voltar</button>
+                    <button class="btn-primario" onclick="irParaEtapa(3)">Continuar →</button>
+                </div>
+            </div>  
+        </div> 
         
     </main>
     <footer>

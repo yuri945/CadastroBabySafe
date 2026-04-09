@@ -199,3 +199,104 @@ footer {
     cursor: pointer;
 }
 
+.campo-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.genero-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.genero-btn {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 11px;
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    background: #f8fafc;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.genero-btn.sel {
+    border: 2px solid #007BFF;
+    background: #e8f2ff;
+    color: #0056b3;
+    font-weight: 500;
+}
+
+.linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.campo textarea {
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: #1e293b;
+    box-sizing: border-box;
+    font-family: inherit;
+    resize: none;
+    height: 80px;
+}
+
+.campo textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px #cce4ff;
+}
+
+.divisor {
+    border: none;
+    border-top: 1px solid #f0f2f5;
+    margin: 20px 0;
+}
+
+.add-filho {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #007BFF;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px 0;
+    margin-bottom: 8px;
+}
+
+.add-icone {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid #007BFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: #007BFF;
+}
+
+.btn-voltar {
+    background: transparent;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+}
