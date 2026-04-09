@@ -16,11 +16,11 @@
             <p>Cadastro de pai/mãe</p>
 
             <div class="fileira-etapas">
-                <div class="item-etapa concluido">
-                    <div class="numero-etapa">✓</div>   
+                <div class="item-etapa ativo">
+                    <div class="numero-etapa">1</div>   
                     <span class="rotulo-etapa">Localização</span>
                 </div>
-                <div class="item-etapa ativo">
+                <div class="item-etapa">
                     <div class="numero-etapa">2</div>
                     <span class="rotulo-etapa">Sua Criança</span>   
                 </div>
@@ -33,11 +33,32 @@
                     <span class="rotulo-etapa">Seu Perfil</span>
                 </div>
             </div>
-        </div>     
+        </div>   
+        <div class="area-formulario">
+            <div id="etapa-1" class="cartao-formulario">
+                <h2> Onde você está? </h2>
+                <p class="subtitulo">Usaremos sua localização para encontrar babás próximas a você.</p>
+
+                <div class="campo">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" placeholder="00000-000" maxlength="9">
+                </div>
+                 <div class="campo">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" placeholder="Preenchido Automaticamente">
+                </div>
+                <div class="botoes">
+                    <button class="btn-secundario">Usar minha localização atual</button>
+                    <button class="btn-primario" onclick="irParaEtapa(2)">Continuar</button>
+                </div>
+
+            </div>    
+        </div>  
+        
     </main>
     <footer>
 
     </footer>
-    <script src="script.js"></script>
+    <script src="cadastro.js"></script>
 </body>
 </html>

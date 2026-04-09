@@ -18,7 +18,7 @@ header h1 {
 }
 
 main {
-    background-color: #e8f2ff;
+    background-color:#E8F2FF;
     border: solid 2px red;
     height: 800px;
 }
@@ -28,11 +28,6 @@ footer {
     height: 62px;
 }
 
-div p {
-    margin-left: 105px;
-    margin-top: 45px;
-   
-}
 
 .cabecalho-progresso {
     background-color: white;
@@ -121,5 +116,86 @@ div p {
   height: 3px;
   background: #007BFF;
   border-radius: 2px 2px 0 0;
+}
+
+.area-formulario {
+    display: flex;
+    justify-content: center;
+    padding: 36px 20px;
+}
+
+.cartao-formulario {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 560px;
+}
+
+.cartao-formulario h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1a365d;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.campo input {
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: #1e293b;
+    box-sizing: border-box;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+}
+
+.btn-primario {
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-secundario {
+    background: transparent;
+    color: #007BFF;
+    border: 1.5px solid #007BFF;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
 }
 
