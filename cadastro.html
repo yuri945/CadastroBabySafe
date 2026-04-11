@@ -87,6 +87,98 @@
                     <button class="btn-primario" onclick="irParaEtapa(3)">Continuar →</button>
                 </div>
             </div>  
+            <div id="etapa-3" class="cartao-formulario" style="display: none;">
+                <h2>Que tipo de cuidado você precisa?</h2>
+                <p class="subtitulo">Selecione a opção que melhor descreve sua situação.</p>
+
+                <div class="secao-label">Frequência</div>
+
+                <div class="opcao-card sel" onclick="selecionarOpcao(this)">
+                    <div class="opcao-radio sel"></div>
+                    <div>
+                        <div class="opcao-titulo">Regular </div>
+                        <div class="opcao-desc"> Esquema fixo semanal ou mensal</div>
+                    </div>
+                </div>
+
+                <div class="opcao-card" onclick="selecionarOpcao(this)">    
+                    <div class="opcao-radio"></div>
+                    <div>
+                        <div class="opcao-titulo">Ocasional</div>
+                        <div class="opcao-desc">As vezes, por uma noite ou um dia</div>
+                    </div>
+                </div>
+
+                <div class="opcao-card" onclick="selecionarOpcao(this)">
+                    <div class="opcao-radio"></div>
+                    <div>
+                        <div class="opcao-titulo">Após a escola</div>
+                        <div class="opcao-desc">Até você chegar em casa do trabalho</div>
+                    </div>
+                </div>
+
+                <hr class="divisor">
+
+                <div class="secao-label">Precisa de ajuda com...? (opcional)</div>
+                    <div class="tags-wrap">
+                    <div class="tag" onclick="selecionarTag(this)">Cozinha</div>
+                    <div class="tag" onclick="selecionarTag(this)">Lição de casa</div>
+                    <div class="tag" onclick="selecionarTag(this)">Tarefas domésticas</div>
+                    <div class="tag" onclick="selecionarTag(this)">Lazer e brincadeiras</div>
+                    <div class="tag" onclick="selecionarTag(this)">Banho e higiene</div>
+                </div>
+
+                <hr class="divisor">
+
+                <div class="campo">
+                    <label for="pagamento">Quanto está disposto a pagar?</label>
+                    <input type="text" id="pagamento" placeholder="Ex: R$25/hora ou negociável">
+                </div>
+                
+                <div class="botoes">
+                    <button class="btn-voltar" onclick="irParaEtapa(2)">← Voltar</button>
+                    <button class="btn-primario" onclick="irParaEtapa(4)">Continuar →</button>
+                </div>
+            </div>
+            
+            <div id="etapa-4" class="cartao-formulario" style="display:none">
+                <h2>Finalize seu perfil</h2>
+                <p class="subtitulo">Quase lá! Essas informações ajudam as babás a te conhecer melhor.</p>
+
+                <div class="upload-foto" onclick="document.getElementById('input-foto').click()">
+                    <input type="file" id="input-foto" accept="image/*" style="display:none" onchange="previewFoto(event)">
+                    <div class="upload-circulo" id="upload-circulo">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#007BFF" stroke-width="1.5">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                        </svg>
+                    </div>
+                    <div class="upload-titulo" id="upload-titulo">Adicionar foto de perfil</div>
+                    <div class="upload-desc">JPG ou PNG, até 5MB</div>
+                </div>
+
+                <div class="campo">
+                    <label for="nome-completo">Nome completo</label>
+                    <input type="text" id="nome-completo" placeholder="Seu nome completo">
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone / WhatsApp</label>
+                    <input type="text" id="telefone" placeholder="(00) 00000-0000">
+                </div>
+
+                <hr class="divisor">
+
+                <div class="campo">
+                    <label for="apresentacao">Apresente sua família</label>
+                    <textarea id="apresentacao" placeholder="Conte brevemente sobre você e seus filhos..."></textarea>
+                </div>
+
+                <div class="botoes">
+                    <button class="btn-voltar" onclick="irParaEtapa(3)">← Voltar</button>
+                    <button class="btn-concluir" onclick="concluirCadastro()">Concluir cadastro ✓</button>
+                </div>
+            </div>
         </div> 
         
     </main>

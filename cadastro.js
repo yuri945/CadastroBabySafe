@@ -35,3 +35,40 @@ function selecionarGenero(botao) {
     });
     botao.classList.add('sel');
 }
+
+function selecionarOpcao(card) {
+    
+    document.querySelectorAll('.opcao-card').forEach(c => {
+        c.classList.remove('sel');
+        c.querySelector('.opcao-radio').classList.remove('sel');
+    });
+    
+    card.classList.add('sel');
+    card.querySelector('.opcao-radio').classList.add('sel');
+}
+
+function selecionarTag(tag) {
+   
+    tag.classList.toggle('sel');
+}
+
+function previewFoto(event) {
+    const arquivo = event.target.files[0];
+    if (!arquivo) return;
+
+    const leitor = new FileReader();
+    leitor.onload = function(e) {
+        
+        const circulo = document.getElementById('upload-circulo');
+        circulo.innerHTML = '<img src="' + e.target.result + '">';
+
+        
+        document.getElementById('upload-titulo').textContent = 'Foto selecionada ✓';
+    };
+    leitor.readAsDataURL(arquivo);
+}
+
+function concluirCadastro() {
+    alert('Cadastro concluído! Bem-vindo ao Baby Safe!');
+    
+}
