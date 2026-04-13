@@ -18,42 +18,75 @@
             <div class="fileira-etapas">
                 <div class="item-etapa ativo">
                     <div class="numero-etapa">1</div>   
+                    <span class="rotulo-etapa">Acesso</span>
+                </div>
+                <div class="item-etapa">
+                 <div class="numero-etapa">2</div>
                     <span class="rotulo-etapa">Localização</span>
                 </div>
                 <div class="item-etapa">
-                    <div class="numero-etapa">2</div>
-                    <span class="rotulo-etapa">Sua Criança</span>   
-                </div>
-                <div class="item-etapa">
                     <div class="numero-etapa">3</div>
-                    <span class="rotulo-etapa">Tipo de Cuidado</span>
+                    <span class="rotulo-etapa">Sua Criança</span>
                 </div>
                 <div class="item-etapa">
                     <div class="numero-etapa">4</div>
-                    <span class="rotulo-etapa">Seu Perfil</span>
+                    <span class="rotulo-etapa">Tipo de Cuidado</span>
                 </div>
+                <div class="item-etapa">
+                    <div class="numero-etapa">5</div>
+                    <span class="rotulo-etapa">Seu Perfil</span>
+                 </div>
             </div>
-        </div>   
+        </div>
         <div class="area-formulario">
             <div id="etapa-1" class="cartao-formulario">
-                <h2> Onde você está? </h2>
+                <h2>Crie sua conta</h2>
+                <p class="subtitulo">Informe seu e-mail e crie uma senha para acessar o Baby Safe.</p>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="seu@email.com">
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="Mínimo 6 caracteres">
+                </div>
+
+                <div class="campo">
+                    <label for="confirmar-senha">Confirmar senha</label>
+                    <input type="password" id="confirmar-senha" placeholder="Repita a senha">
+                    <span class="erro-senha" id="erro-senha"></span>
+                </div>
+
+                <div class="botoes">
+                    <span></span>
+                    <button class="btn-primario" onclick="validarSenhaEAvancar()">Continuar →</button>
+                </div>
+            </div>
+
+<!-- ETAPA 2 - LOCALIZAÇÃO -->
+            <div id="etapa-2" class="cartao-formulario" style="display:none">
+                <h2>Onde você está?</h2>
                 <p class="subtitulo">Usaremos sua localização para encontrar babás próximas a você.</p>
 
                 <div class="campo">
                     <label for="cep">CEP</label>
                     <input type="text" id="cep" placeholder="00000-000" maxlength="9">
                 </div>
-                 <div class="campo">
+                <div class="campo">
                     <label for="endereco">Endereço</label>
                     <input type="text" id="endereco" placeholder="Preenchido Automaticamente">
                 </div>
                 <div class="botoes">
-                    <button class="btn-secundario">Usar minha localização atual</button>
-                    <button class="btn-primario" onclick="irParaEtapa(2)">Continuar</button>
-                </div> 
-            </div>  
-            <div id="etapa-2" class="cartao-formulario" style="display:none">
-                <h2>Conte Sobre sua criança.</h2>
+                    <button class="btn-voltar" onclick="irParaEtapa(1)">← Voltar</button>
+                    <button class="btn-primario" onclick="irParaEtapa(3)">Continuar →</button>
+                </div>
+            </div>
+
+<!-- ETAPA 3 - SUA CRIANÇA -->
+            <div id="etapa-3" class="cartao-formulario" style="display:none">
+                <h2>Conte sobre sua criança</h2>
                 <p class="subtitulo">Você poderá adicionar mais crianças depois de concluir.</p>
 
                 <label class="campo-label">Seu filho é...</label>
@@ -64,7 +97,7 @@
                 <div class="linha-dupla">
                     <div class="campo">
                         <label for="nome">Nome da criança</label>
-                        <input type="text" id="nome" placeholder="Ex:Pedro">
+                        <input type="text" id="nome" placeholder="Ex: Pedro">
                     </div>
                     <div class="campo">
                         <label for="nascimento">Data de nascimento</label>
@@ -76,39 +109,36 @@
                     <textarea id="descricao" placeholder="Fale sobre a personalidade, rotina e necessidades dele..."></textarea>
                 </div>
                 <hr class="divisor">
-
                 <div class="add-filho">
                     <div class="add-icone">+</div>
-                    Adicionar outra criança
+                        Adicionar outra criança
                 </div>
-
                 <div class="botoes">
-                    <button class="btn-voltar" onclick="irParaEtapa(1)">← Voltar</button>
-                    <button class="btn-primario" onclick="irParaEtapa(3)">Continuar →</button>
+                    <button class="btn-voltar" onclick="irParaEtapa(2)">← Voltar</button>
+                    <button class="btn-primario" onclick="irParaEtapa(4)">Continuar →</button>
                 </div>
-            </div>  
-            <div id="etapa-3" class="cartao-formulario" style="display: none;">
+            </div>
+
+<!-- ETAPA 4 - TIPO DE CUIDADO -->
+            <div id="etapa-4" class="cartao-formulario" style="display: none;">
                 <h2>Que tipo de cuidado você precisa?</h2>
                 <p class="subtitulo">Selecione a opção que melhor descreve sua situação.</p>
 
                 <div class="secao-label">Frequência</div>
-
                 <div class="opcao-card sel" onclick="selecionarOpcao(this)">
                     <div class="opcao-radio sel"></div>
                     <div>
-                        <div class="opcao-titulo">Regular </div>
-                        <div class="opcao-desc"> Esquema fixo semanal ou mensal</div>
+                        <div class="opcao-titulo">Regular</div>
+                        <div class="opcao-desc">Esquema fixo semanal ou mensal</div>
                     </div>
                 </div>
-
-                <div class="opcao-card" onclick="selecionarOpcao(this)">    
+                <div class="opcao-card" onclick="selecionarOpcao(this)">
                     <div class="opcao-radio"></div>
                     <div>
                         <div class="opcao-titulo">Ocasional</div>
-                        <div class="opcao-desc">As vezes, por uma noite ou um dia</div>
+                        <div class="opcao-desc">Às vezes, por uma noite ou um dia</div>
                     </div>
                 </div>
-
                 <div class="opcao-card" onclick="selecionarOpcao(this)">
                     <div class="opcao-radio"></div>
                     <div>
@@ -116,32 +146,28 @@
                         <div class="opcao-desc">Até você chegar em casa do trabalho</div>
                     </div>
                 </div>
-
                 <hr class="divisor">
-
                 <div class="secao-label">Precisa de ajuda com...? (opcional)</div>
-                    <div class="tags-wrap">
+                <div class="tags-wrap">
                     <div class="tag" onclick="selecionarTag(this)">Cozinha</div>
                     <div class="tag" onclick="selecionarTag(this)">Lição de casa</div>
                     <div class="tag" onclick="selecionarTag(this)">Tarefas domésticas</div>
                     <div class="tag" onclick="selecionarTag(this)">Lazer e brincadeiras</div>
                     <div class="tag" onclick="selecionarTag(this)">Banho e higiene</div>
                 </div>
-
                 <hr class="divisor">
-
                 <div class="campo">
                     <label for="pagamento">Quanto está disposto a pagar?</label>
                     <input type="text" id="pagamento" placeholder="Ex: R$25/hora ou negociável">
                 </div>
-                
                 <div class="botoes">
-                    <button class="btn-voltar" onclick="irParaEtapa(2)">← Voltar</button>
-                    <button class="btn-primario" onclick="irParaEtapa(4)">Continuar →</button>
+                    <button class="btn-voltar" onclick="irParaEtapa(3)">← Voltar</button>
+                    <button class="btn-primario" onclick="irParaEtapa(5)">Continuar →</button>
                 </div>
             </div>
-            
-            <div id="etapa-4" class="cartao-formulario" style="display:none">
+
+<!-- ETAPA 5 - SEU PERFIL -->
+            <div id="etapa-5" class="cartao-formulario" style="display:none">
                 <h2>Finalize seu perfil</h2>
                 <p class="subtitulo">Quase lá! Essas informações ajudam as babás a te conhecer melhor.</p>
 
@@ -161,21 +187,17 @@
                     <label for="nome-completo">Nome completo</label>
                     <input type="text" id="nome-completo" placeholder="Seu nome completo">
                 </div>
-
                 <div class="campo">
                     <label for="telefone">Telefone / WhatsApp</label>
                     <input type="text" id="telefone" placeholder="(00) 00000-0000">
                 </div>
-
                 <hr class="divisor">
-
                 <div class="campo">
                     <label for="apresentacao">Apresente sua família</label>
                     <textarea id="apresentacao" placeholder="Conte brevemente sobre você e seus filhos..."></textarea>
                 </div>
-
                 <div class="botoes">
-                    <button class="btn-voltar" onclick="irParaEtapa(3)">← Voltar</button>
+                    <button class="btn-voltar" onclick="irParaEtapa(4)">← Voltar</button>
                     <button class="btn-concluir" onclick="concluirCadastro()">Concluir cadastro ✓</button>
                 </div>
             </div>
